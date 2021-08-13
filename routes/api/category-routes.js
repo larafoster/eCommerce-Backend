@@ -15,14 +15,36 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new category
+    try {
+    const CategoryData = await Category.create(req.body);
+    res.status(200).json(CategoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+
 });
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+ Category.findByIdAndUpdate(req.body)
+    .then((category) => res.status(200).json(category))
+    .catch((err) => res.status(400).json(err));
 });
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+    try {
+    const CategoryData = await Category.destroy({
+      where: { id: req.params.id }
+    });
+    if (!CategoryData) {
+      res.status(404).json({ message: 'No trip with this id!' });
+      return;
+    }
+    res.status(200).json(CategoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
