@@ -5,7 +5,6 @@
 
   ## Table of Contents
   - [Installation](#installation)
-  - [Usage](#usage)
   - [Project Links](#links)
   - [Contribute](#contribute)
   - [Credits](#credits)
@@ -19,19 +18,16 @@
   4. To start the app, type 'node index' in the terminal.
   5. Use Postman or Insomnia to test the api's.
   
-  ## Usage 
-   add content  
-
-
   ### Links
   Project Links:
   - [Github Repo](https://github.com/larafoster/eCommerce-Backend) 
 
   View this app in motion:
-  - [video of inquirer prompts](https://drive.google.com/file/d/1TTOMuoW9mRnOX2sVK0OPlDTpLsQ4n0eQ/view)
-
-  Screenshots of app:
-  - [img of inquirer prompts](./assets/em-tracker.png)
+  - [video of technical requirements](https://drive.google.com/file/d/15lJ1Rhz8WQmxdGrDUXboCOXLwDuum7Z4/view)
+  - [video of GET All in Postman](https://drive.google.com/file/d/13nL4rX-NqtMcZ2r9dLN5dq4kZQ5nW2yL/view)
+  - [video of GET by ID in Postman](https://drive.google.com/file/d/1VDi5x0bbL2fDRRl0EW6_tECMOhCCCpoL/view)  - [video of PUT by ID in Postman](https://drive.google.com/file/d/1NvnXLzPqVXbAM2IvW6OMlBDTpL5NVb6Y/view)
+  - [video of POST in Postman](https://drive.google.com/file/d/1NurOZKsJp1H4MczjiBlEuhGfg3Yc868v/view)
+  - [video of DELETE by ID in Postman](https://drive.google.com/file/d/1uJ28tWhLBM8NniRywqVCrLST0haqNweJ/view)
 
   ## Credits 
   This project is created with the following technologies:
