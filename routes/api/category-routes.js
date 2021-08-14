@@ -5,7 +5,7 @@ const {Category, Product} = require ('../../models');
 /* router.get('/', (req, res) => {
   // Get all books from the book table
   Book.findAll().then((bookData) => {
-    res.json(bookData);
+    res.json(bookData); 
   });
 }); 
 */
@@ -52,11 +52,11 @@ router.put ('/:id', (req, res) => {
         id: req.params.id,
       },
     });
-    if (!CategoryData[0]) {
+    if (!categories[0]) {
       res.status (404).json ({message: 'not found'});
       return;
     }
-    res.status (200).json (CategoryData);
+    res.status (200).json (categories);
   } catch (err) {
     res.status (500).json (err);
   }
@@ -71,12 +71,12 @@ router.delete ('/:id', (req, res) => {
       },
     });
 
-    if (!categoryData) {
+    if (!categories) {
       res.status (404).json ({message: 'No Category found with this id!'});
       return;
     }
 
-    res.status (200).json (categoryData);
+    res.status (200).json (categories);
   } catch (err) {
     res.status (500).json (err);
   }

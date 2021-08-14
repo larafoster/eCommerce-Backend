@@ -8,7 +8,7 @@ router.get ('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll ({
-    include: [Category, {model: Tag, through: ProductTag}], 
+    include: [Category, {model: Tag, through: ProductTag}],
   })
     .then (products => res.status (200).json (products))
     .catch (err => {
@@ -23,8 +23,8 @@ router.get ('/:id', (req, res) => {
   // be sure to include its associated Category and Tag data
   //same as findAll but include the where
   Product.findOne ({
-     where: {id: req.params.id},
-    include: [Category, {model: Tag, through: ProductTag}], 
+    where: {id: req.params.id},
+    include: [Category, {model: Tag, through: ProductTag}],
   })
     .then (products => res.status (200).json (products))
     .catch (err => {

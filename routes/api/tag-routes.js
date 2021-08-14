@@ -1,48 +1,79 @@
-const router = require('express').Router();
-const { Tag, Product, ProductTag } = require('../../models');
+const router = require ('express').Router ();
+const {Tag, Product, ProductTag} = require ('../../models');
 
 // The `/api/tags` endpoint
 
-router.get('/', (req, res) => {
+router.get ('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
+  Tag.findAll ({
+    include: [Product], // be sure to include its associated Products
+  })
+    .then (tags => res.status (200).json (tags))
+    .catch (err => {
+      console.log (err);
+      res.status (500).json (err);
+    });
 });
 
-router.get('/:id', (req, res) => {
+router.get ('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
+  Tag.findOne ({
+    // JOIN with travellers, using the Trip through table
+    //here instead of through use where and include
+    where: {id: req.params.id},
+    include: [Product],
+  })
+    .then (tags => res.status (200).json (tags))
+    .catch (err => res.status (400).json (err));
 });
 
-router.post('/', (req, res) => {
+router.post ('/', (req, res) => {
   // create a new tag
+  Tag.create (req.body)
+    .then (tags => res.status (200).json (tags))
+    .catch (err => {
+      console.log (err);
+      res.status (400).json (err);
+    });
 });
 
-router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
-});
-
-router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
-});
-
-module.exports = router;
-
-// DELETE a Tag
-router.delete('/:id', (req, res) => {
+router.put ('/:id', (req, res) => {
   try {
-    Tag.destroy({
+    Tag.update (req.body, {
       where: {
-        id: req.params.id
-      }
+        id: req.params.id,
+      },
+    });
+    if (!tags[0]) {
+      res.status (404).json ({message: 'not found'});
+      return;
+    }
+    res.status (200).json (tags);
+  } catch (err) {
+    res.status (500).json (err);
+  }
+});
+
+router.delete ('/:id', (req, res) => {
+  // delete a category by its `id` value
+  try {
+    Tag.destroy ({
+      where: {
+        id: req.params.id,
+      },
     });
 
-    if (!tagData) {
-      res.status(404).json({ message: 'No Tag found with this id!' });
+    if (!tags) {
+      res.status (404).json ({message: 'No Category found with this id!'});
       return;
     }
 
-    res.status(200).json(tagData);
+    res.status (200).json (tags);
   } catch (err) {
-    res.status(500).json(err);
+    res.status (500).json (err);
   }
 });
+
+module.exports = router;
