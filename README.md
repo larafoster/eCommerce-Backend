@@ -24,7 +24,7 @@
 
   View this app in motion:
   - [video of technical requirements](https://drive.google.com/file/d/15lJ1Rhz8WQmxdGrDUXboCOXLwDuum7Z4/view)
-  - [video of GET All in Postman](https://drive.google.com/file/d/13nL4rX-NqtMcZ2r9dLN5dq4kZQ5nW2yL/view)
+  - [video of GET All in Postman](https://drive.google.com/file/d/1kSbV-9xiuM3zC0wtIDoA9Kk4FTqKa6Pi/view)
   - [video of GET by ID in Postman](https://drive.google.com/file/d/1VDi5x0bbL2fDRRl0EW6_tECMOhCCCpoL/view)  - [video of PUT by ID in Postman](https://drive.google.com/file/d/1NvnXLzPqVXbAM2IvW6OMlBDTpL5NVb6Y/view)
   - [video of POST in Postman](https://drive.google.com/file/d/1NurOZKsJp1H4MczjiBlEuhGfg3Yc868v/view)
   - [video of DELETE by ID in Postman](https://drive.google.com/file/d/1uJ28tWhLBM8NniRywqVCrLST0haqNweJ/view)
