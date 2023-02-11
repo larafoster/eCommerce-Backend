@@ -20,7 +20,7 @@
     "url": "https://github.com/larafoster/eCommerce-Backend/issues"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
